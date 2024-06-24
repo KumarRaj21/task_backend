@@ -82,7 +82,7 @@ app.get('/api/transactions', async (req, res) => {
         res.json({ transactions, total, page, perPage });
     } catch (error) {
         res.status(500).json({ error: error.message });
-    }
+    } 
 });
 
 // API for statistics
