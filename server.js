@@ -49,7 +49,7 @@ app.get('/api/data', async (req, res) => {
         await Transaction.deleteMany({});
         await Transaction.insertMany(transactions);
 
-        res.json({ message: 'Database initialized with seed data.' });
+         res.send(transactions);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
