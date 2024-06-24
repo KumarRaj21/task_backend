@@ -2,8 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const axios = require('axios');
 const app = express();
-const cors = require('cors')
-app.use(cors)
+
 const transSchema = new mongoose.Schema({
     id:Number,
     title: String,
@@ -50,7 +49,7 @@ app.get('/api/data', async (req, res) => {
         await Transaction.deleteMany({});
         await Transaction.insertMany(transactions);
 
-         res.send(transactions);
+         res.send(transactions)
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
